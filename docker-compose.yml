@@ -1,7 +1,13 @@
 version : "3.3"
 services :
-  web :
-     build : .
-     ports :
-         - "8000:8000"
+    django_todo_app :
+          container_name: "django-app"
+                build : .
+                      ports:
+                              - 8000:8000
+                                  jenkins_server :
+                                        container_name: "jenkins-server"
+                                              image : jenkins/jenkins
+                                                    ports:
+                                                            - 8080:8080
 
